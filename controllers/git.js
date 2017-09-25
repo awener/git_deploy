@@ -31,8 +31,8 @@ exports.verify = function(req, res, next) {
 
 exports.pull = function(req, res) {
   const repository = req.body.repository.name;
-  const user = req.body.puser.name;
-  const email = req.body.puser.email;
+  const user = req.body.pusher.name;
+  const email = req.body.pusher.email;
   const cmd = `cd ${CONFIG.pwd}; git pull origin master; pm2 restart ${CONFIG.app}`;
   return exec(cmd, function() {
     let saveDeployment = new History({
