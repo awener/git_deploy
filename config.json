@@ -1,0 +1,7 @@
+{
+  "password": "*******",
+  "event": ["ping", "push"],
+  "repository": ["app"],
+  "pwd": "/opt/project",
+  "app": "pm2-app-name"
+}
