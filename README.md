@@ -1,4 +1,3 @@
-# git_deploy
 Auto deploy git repository
 
 # Requirements
