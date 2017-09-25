@@ -1,5 +1,6 @@
 const crypto = require("crypto");
 const exec = require('child_process').exec;
+const History = require("../models/history");
 exports.verify = function(req, res, next) {
   const signature = req.headers['x-hub-signature'];
   const event = req.headers['x-github-event'];
@@ -29,9 +30,18 @@ exports.verify = function(req, res, next) {
 }
 
 exports.pull = function(req, res) {
+  const repository = req.body.repository.name;
+  const user = req.body.puser.name;
+  const email = req.body.puser.email;
   const cmd = `cd ${CONFIG.pwd}; git pull origin master; pm2 restart ${CONFIG.app}`;
-  return exec(cmd, callback);
-  return rebuild(config,function() {
-    return res.status(200).end();
+  return exec(cmd, function() {
+    let saveDeployment = new History({
+      repository: repository,
+      user: user,
+      email:  email
+    }).save(function() {
+      return res.status(200).end();
+    });
+
   });
 }

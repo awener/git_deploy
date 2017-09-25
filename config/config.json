@@ -1,9 +1,9 @@
 {
-  "password": "****",
+  "password": "testing",
   "event": ["ping", "push"],
   "repository": ["app"],
-  "pwd": "/opt/my-project",
-  "app": "pm2-project-name",
+  "pwd": "/opt/project",
+  "app": "deploy",
 
   "server": {
     "port": 3005,
@@ -12,5 +12,11 @@
   },
   "auth": {
     "password": "gilfoyle"
+  },
+  "db": {
+    "host": "mongodb://localhost/testlab",
+    "options": {
+      "useMongoClient": true
+    }
   }
 }
