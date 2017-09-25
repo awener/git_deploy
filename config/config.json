@@ -6,6 +6,11 @@
   "app": "pm2-project-name",
 
   "server": {
-    "port": 3005
+    "port": 3005,
+    "secret": "myawesomesecret",
+    "expire": 60
+  },
+  "auth": {
+    "password": "gilfoyle"
   }
 }
