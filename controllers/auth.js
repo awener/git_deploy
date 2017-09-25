@@ -5,7 +5,7 @@ exports.login = function(req, res) {
     const password = req.body.password;
     if(password !== CONFIG.auth.password) return res.status(500).jsonp({ error: "Invalid login" });
 
-    const token = jwt.sign({}, CONFIG.server.secret, {
+    const token = jwt.sign({name: "DEMO"}, CONFIG.server.secret, {
       expiresIn: CONFIG.server.expire
     });
 
