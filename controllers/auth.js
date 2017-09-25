@@ -13,6 +13,7 @@ exports.login = function(req, res) {
 }
 
 exports.verify = function(req, res, next) {
+  const deploy = req.headers['deploy-token'];
   if(!deploy) return res.status(500).jsonp({error: "no token header" });
   jwt.verify(req.headers['deploy-token'], CONFIG.server.secret, function(err, decode) {
     if(err) return res.status(500).jsonp({ error: "Invalid token" });

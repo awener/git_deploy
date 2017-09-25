@@ -1,3 +1,4 @@
+const History = require("../models/history");
 
 
 exports.hello = function(req, res) {
@@ -6,5 +7,8 @@ exports.hello = function(req, res) {
 }
 
 exports.last = function(req, res) {
-  res.status(200).jsonp({ list: "last list" });
+History.findOne({}).sort({created: -1}).exec(function(err, resp) {
+    return res.status(200).jsonp({ user: resp });
+
+  });
 }
