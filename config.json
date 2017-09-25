@@ -1,7 +1,11 @@
 {
-  "password": "*******",
+  "password": "****",
   "event": ["ping", "push"],
   "repository": ["app"],
-  "pwd": "/opt/project",
-  "app": "pm2-app-name"
+  "pwd": "/opt/my-project",
+  "app": "pm2-project-name",
+
+  "server": {
+    "port": 3005
+  }
 }
