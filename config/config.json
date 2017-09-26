@@ -1,5 +1,5 @@
 {
-  "password": "qwer@@1",
+  "password": "***",
   "event": ["ping", "push"],
   "repository": ["app"],
   "pwd": "/opt/project",
